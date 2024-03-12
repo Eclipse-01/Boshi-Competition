@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Boot;.\Library;.\Program</IncludePath>
+              <IncludePath>.\Boot;.\Library;.\Program;.\Functions</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -663,6 +663,41 @@
               <FileType>1</FileType>
               <FilePath>.\Library\stm32f10x_wwdg.c</FilePath>
             </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>oled.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\oled.h</FilePath>
+            </File>
+            <File>
+              <FileName>sys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\sys.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\sys.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED_Font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\OLED_Font.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -679,9 +714,39 @@
           <GroupName>Function</GroupName>
           <Files>
             <File>
-              <FileName>Functions.c</FileName>
+              <FileName>actions.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Functions.c</FilePath>
+              <FilePath>.\Functions\actions.c</FilePath>
+            </File>
+            <File>
+              <FileName>actions.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Functions\actions.h</FilePath>
+            </File>
+            <File>
+              <FileName>basicfunctions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Functions\basicfunctions.c</FilePath>
+            </File>
+            <File>
+              <FileName>basicfunctions.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Functions\basicfunctions.h</FilePath>
+            </File>
+            <File>
+              <FileName>namedefine.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Functions\namedefine.h</FilePath>
+            </File>
+            <File>
+              <FileName>sensors.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Functions\sensors.c</FilePath>
+            </File>
+            <File>
+              <FileName>sensors.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Functions\sensors.h</FilePath>
             </File>
           </Files>
         </Group>

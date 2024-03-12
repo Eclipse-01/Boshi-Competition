@@ -1,6 +1,11 @@
 #include <stm32f10x.h>
 #include <stm32f10x_rcc.h>
 #include <stm32f10x_gpio.h>
+#include <actions.h>
+#include <sensors.h>
+#include <basicfunctions.h>
+#include <oled.h>
+
 
 enum DriveStage{ //定义了一个枚举类型，用来表示小车的状态
     WaitAtLine,//等待在线上
@@ -18,6 +23,12 @@ enum DriveStage{ //定义了一个枚举类型，用来表示小车的状态
 
 int main(void) //整个自动驾驶程序的入口点，负责调用各种各样的函数
 {
-    initMCU(); //初始化各种外设
+    //initMCU(); //初始化各种外设
+    OLED_Init(); //初始化OLED显示屏
+    OLED_ShowString(1, 1, "Hello, world!"); //在OLED上显示一行字符串
+	while(1)
+    {
+        
+    }	                                                                                                                                            
     
 }
