@@ -4,7 +4,7 @@
 #include <actions.h>
 #include <sensors.h>
 #include <basicfunctions.h>
-#include <oled.h>
+#include <OLED.h>
 
 
 enum DriveStage{ //定义了一个枚举类型，用来表示小车的状态
@@ -12,7 +12,7 @@ enum DriveStage{ //定义了一个枚举类型，用来表示小车的状态
     TurnRight1,//右转
     TurnRight2,//右转
     PrepareForStopby,//准备停车
-    Stopby,//停车
+    Park,//停车
     DriveOut,//驶出
     TurnLeft1,//左转
     TurnLeft2,//左转
@@ -24,11 +24,7 @@ enum DriveStage{ //定义了一个枚举类型，用来表示小车的状态
 int main(void) //整个自动驾驶程序的入口点，负责调用各种各样的函数
 {
     //initMCU(); //初始化各种外设
-    OLED_Init(); //初始化OLED显示屏
-    OLED_ShowString(1, 1, "Hello, world!"); //在OLED上显示一行字符串
-	while(1)
-    {
-        
-    }	                                                                                                                                            
-    
+    OLED_Init(); 
+    OLED_ShowString(1, 1, "Hello, world!"); 
+	
 }
