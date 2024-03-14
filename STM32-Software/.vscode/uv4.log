@@ -1,3 +1,9 @@
-Load "d:\\Coding\\Boshi-Competition\\STM32-Software\\Objects\\Project.axf" 
-Erase Done.Programming Done.Verify OK.Application running ...
-Flash Load finished at 20:37:34
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'AutoMobile'
+compiling sensors.c...
+"no source": Error:  #5: cannot open source input file "Functions\sensors.c": No such file or directory
+Functions\sensors.c: 0 warnings, 1 error
+compiling main.c...
+".\Objects\Project.axf" - 1 Error(s), 0 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:01

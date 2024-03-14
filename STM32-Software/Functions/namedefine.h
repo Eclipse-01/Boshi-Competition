@@ -5,10 +5,14 @@
 
 //电机类
 #define MotorSwitch GPIOA_Pin_0//控制电机的开关
-#define MotorLeftIN1 GPIOA_Pin_1//电机左边的IN1
-#define MotorLeftIN2 GPIOA_Pin_2//电机左边的IN2
-#define MotorRightIN1 GPIOA_Pin_3//电机右边的IN1
-#define MotorRightIN2 GPIOA_Pin_4//电机右边的IN2
+#define MotorFrontLeftIN1 GPIOA_Pin_1//左前的IN1
+#define MotorFrontLeftIN2 GPIOA_Pin_2//左前的IN2
+#define MotorRightIN1 GPIOA_Pin_3//右前的IN1
+#define MotorRightIN2 GPIOA_Pin_4//右前的IN2
+#define MotorLeftIN1 GPIOA_Pin_8//左后的IN1
+#define MotorLeftIN2 GPIOA_Pin_9//左后的IN2
+#define MotorRightBackIN1 GPIOA_Pin_10//右后的IN1
+#define MotorRightBackIN2 GPIOA_Pin_11//右后的IN2
 
 //传感器类
 #define LightSensor1 GPIOA_Pin_5//循迹传感器1

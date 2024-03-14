@@ -1,6 +1,5 @@
 .\objects\actions.o: Functions\actions.c
 .\objects\actions.o: Functions\basicfunctions.h
-.\objects\actions.o: Functions\sensors.h
 .\objects\actions.o: .\Boot\stm32f10x.h
 .\objects\actions.o: .\Boot\core_cm3.h
 .\objects\actions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
