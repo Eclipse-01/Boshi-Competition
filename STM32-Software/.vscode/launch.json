@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Coding/Boshi-Competition/STM32-Software/Program",
-      "program": "d:/Coding/Boshi-Competition/STM32-Software/Program/build/Debug/outDebug",
+      "cwd": "d:/Coding/Boshi-Competition/STM32-Software/Functions",
+      "program": "d:/Coding/Boshi-Competition/STM32-Software/Functions/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

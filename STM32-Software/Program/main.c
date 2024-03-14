@@ -33,12 +33,9 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
     GPIO_SetBits(GPIOA, GPIO_Pin_0);
     GPIO_ResetBits(GPIOA, GPIO_Pin_2);
 
-
-
-
 	while(1)
     {
-        
+                
     }	                                                                                                                                            
     
 }

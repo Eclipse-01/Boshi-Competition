@@ -4,21 +4,19 @@
 */
 
 //电机类
-#define MotorSwitch GPIOA_Pin_0//控制电机的开关
-#define MotorFrontLeftIN1 GPIOA_Pin_1//左前的IN1
-#define MotorFrontLeftIN2 GPIOA_Pin_2//左前的IN2
-#define MotorRightIN1 GPIOA_Pin_3//右前的IN1
-#define MotorRightIN2 GPIOA_Pin_4//右前的IN2
-#define MotorLeftIN1 GPIOA_Pin_8//左后的IN1
-#define MotorLeftIN2 GPIOA_Pin_9//左后的IN2
-#define MotorRightBackIN1 GPIOA_Pin_10//右后的IN1
-#define MotorRightBackIN2 GPIOA_Pin_11//右后的IN2
+#define MotorLeftSwitch GPIOA_Pin_0//电机开关
+#define MotorLeftForward GPIOA_Pin_1//左电机正转
+#define MotorLeftBackward GPIOA_Pin_2//左电机反转
+#define MotorRightForward GPIOA_Pin_4//右电机正转
+#define MotorRightBackward GPIOA_Pin_8//右电机反转
+
 
 //传感器类
 #define LightSensor1 GPIOA_Pin_5//循迹传感器1
 #define LightSensor2 GPIOA_Pin_6//循迹传感器2
 #define LightSensor3 GPIOA_Pin_7//循迹传感器3
 #define LightSensor4 GPIOB_Pin_0//循迹传感器4
+#define LightSensor5 GPIOB_Pin_1//循迹传感器5（在车头正中间，用来检测终点）
 #define Button1 GPIOB_Pin_1//按钮1
 
 //其他的输出

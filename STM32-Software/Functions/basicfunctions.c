@@ -9,7 +9,7 @@ int initMCU()//初始化MCU，包括各种外设
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 }
 
-int Motor(int motor, int position, int speed)//Motor表示电机，Position代表正反转，0正1反， Speed取0-100的值，表示电机的速度
+int Motor(int left,int right)//Motor表示电机，
 {
     
 }
