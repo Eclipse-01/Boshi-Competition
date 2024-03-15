@@ -24,6 +24,11 @@ int Beep(int state)//State取0或1，表示蜂鸣器的状态
     GPIO_SetBits(GPIOA, GPIO_Pin_8);//设置GPIOA的8号引脚为高电平
 }
 
+int Button()//返回按键的状态
+{
+    GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0);
+}
+
 int Sensor(int sensor)//Sensor取1-5的值，表示传感器的编号
 {
     GPIO_ReadInputDataBit(GPIOA, sensor);
