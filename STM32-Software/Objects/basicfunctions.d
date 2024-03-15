@@ -28,3 +28,4 @@
 .\objects\basicfunctions.o: .\Library\stm32f10x_usart.h
 .\objects\basicfunctions.o: .\Library\stm32f10x_wwdg.h
 .\objects\basicfunctions.o: .\Library\misc.h
+.\objects\basicfunctions.o: Functions\Movement.h

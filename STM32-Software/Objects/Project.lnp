@@ -32,7 +32,7 @@
 ".\objects\main.o"
 ".\objects\actions.o"
 ".\objects\basicfunctions.o"
-".\objects\sensors.o"
+".\objects\movement.o"
 --strict --scatter ".\Objects\Project.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -4,10 +4,10 @@ Actions库将巡线任务的不同子任务进行封装，方便在主程序中�
 #ifndef __ACTIONS_H
 #define __ACTIONS_H
 
-int LineDetcet();
+int LineDetcet(void);
 int LineKeep(int LineStatus);
-int AutoPark();
-int DriveOut();
-int SwitchLane();
+int AutoPark(void);
+int DriveOut(void);
+int SwitchLane(void);
 
 #endif

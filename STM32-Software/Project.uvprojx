@@ -739,34 +739,14 @@
               <FilePath>.\Functions\namedefine.h</FilePath>
             </File>
             <File>
-              <FileName>sensors.c</FileName>
+              <FileName>Movement.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Functions\sensors.c</FilePath>
+              <FilePath>.\Functions\Movement.c</FilePath>
             </File>
             <File>
-              <FileName>sensors.h</FileName>
+              <FileName>Movement.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Functions\sensors.h</FilePath>
-            </File>
-            <File>
-              <FileName>Motor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Library\Motor.c</FilePath>
-            </File>
-            <File>
-              <FileName>Motor.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Library\Motor.h</FilePath>
-            </File>
-            <File>
-              <FileName>PWM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Library\PWM.c</FilePath>
-            </File>
-            <File>
-              <FileName>PWM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Library\PWM.h</FilePath>
+              <FilePath>.\Functions\Movement.h</FilePath>
             </File>
           </Files>
         </Group>

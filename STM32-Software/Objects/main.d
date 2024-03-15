@@ -28,3 +28,8 @@
 .\objects\main.o: .\Library\stm32f10x_usart.h
 .\objects\main.o: .\Library\stm32f10x_wwdg.h
 .\objects\main.o: .\Library\misc.h
+.\objects\main.o: .\Functions\actions.h
+.\objects\main.o: .\Functions\basicfunctions.h
+.\objects\main.o: .\Library\OLED.h
+.\objects\main.o: .\Functions\Movement.h
+.\objects\main.o: .\Library\Delay.h

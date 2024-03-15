@@ -4,6 +4,8 @@
 #include <actions.h>
 #include <basicfunctions.h>
 #include <OLED.h>
+#include <Movement.h>
+#include <Delay.h>
 
 #define NoWire 0
 #define Left0 1
@@ -33,13 +35,14 @@ enum DriveStage{ //定义了一个枚举类型，用来表示小车的状态
 
 int main(void) //整个自动驾驶程序的入口点，负责调用各种各样的函数
 {
-    //initMCU(); //初始化MCU,包括端口，总线，定时器等
+    initMCU(); //初始化MCU,包括端口，总线，定时器等
+    /*
     while(Button()==0);//等待按键按下
     LED(1,1);//点亮LED
     while(Button()==1);//等待按键松开
-    delay_ms(500);//延时
+    Delay_ms(500);//延时
     LED(1,0);//熄灭LED
-                                            //int DriveStage = 0;//初始化小车状态
+      */                                      //int DriveStage = 0;//初始化小车状态
     int SensorStatus = 0;//初始化传感器状态
 
     while(1)//开到停车线前
@@ -47,10 +50,13 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
         SensorStatus = LineDetcet();//检测传感器状态
         if (LineDetcet() == Stop)//如果检测到停车线
         {
+            motor(0,0);//停车
             break;
         }
         LineKeep(SensorStatus);//保持车道
     }
+    goto END;
+    Delay_s(2);
 
     while(1)//等待停车线
     {
@@ -67,7 +73,7 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
     while(Button()==0);//等待按键按下(发车)
     LED(1,1);//点亮LED
     while(Button()==1);//等待按键松开
-    delay_ms(500);//延时
+    Delay_ms(500);//延时
     LED(1,0);//熄灭LED
 
     DriveOut();//驶出
@@ -104,9 +110,46 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
     while(Button()==0);//等待按键按下(发车)
     LED(1,1);//点亮LED
     while(Button()==1);//等待按键松开
-    delay_ms(500);//延时
+    Delay_ms(500);//延时
     LED(1,0);//熄灭LED
+    motor(-50,50);//掉头
+    while(Sensor(2)==0);//等待左转完成
     
+    int counter = 0;
+    while(1)
+    {
+        SensorStatus = LineDetcet();//检测传感器状态
+        if (LineDetcet() == TurnRight)//如果检测到停车线
+        {
+            counter++;
+            if (counter == 2)
+            {
+                break;
+            }
+        }
+        LineKeep(SensorStatus);//保持车道(车道保持也有转弯功能)
+    }
+    motor(50,50);//前进
+    Delay_ms(500);//延时
+    while(1)
+    {
+        motor(50,50);//前进
+        if (Sensor(1)||Sensor(2)||Sensor(3)||Sensor(4))//如果检测到线
+        {
+            motor(0,0);//停车
+            break;
+        }
+    }
+END:
+    LED(1,1);//点亮LED
+    motor(0,0);//停车
+
+
+
+
+
+
+
 
 
     

@@ -1,5 +1,6 @@
 #include "basicfunctions.h"
-#include "Motor.h"
+#include "Delay.h"
+#include "Movement.h"
 
 
 #define NoWire 0
@@ -21,7 +22,7 @@ int LineDetcet()//车道检测
     return Left1;
     if (Sensor(3))//右侧检测到压线
     return Right1;
-    if ((Sensor(2) && Sensor(3))&&!(Sensor(1)||Sensor(4))) //两边均检测到压线,但同时两边外侧的传感器没有反应
+    if ((Sensor(1)&&Sensor(4))) //两边均检测到压线,但同时两边外侧的传感器没有反应
     return Stop;
     if (Sensor(1) == 1 && Sensor(2) == 1 && Sensor(4))//左侧均检测到压线，右侧未检测到压线
     return TurnLeft;
@@ -79,7 +80,7 @@ int AutoPark()//倒车入库
         if (Sensor(2) == 0 && Sensor(3) == 0)
         {
             motor(0,0);
-            return 0;//向主函数返回倒车已经完成
+            break;
         }
     }
     motor(-20,-20);

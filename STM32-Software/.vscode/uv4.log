@@ -1,9 +1,31 @@
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'AutoMobile'
-compiling sensors.c...
-"no source": Error:  #5: cannot open source input file "Functions\sensors.c": No such file or directory
-Functions\sensors.c: 0 warnings, 1 error
+compiling actions.c...
+Functions\actions.c(31): warning:  #940-D: missing return statement at end of non-void function "LineDetcet" 
+  }
+Functions\actions.c: 1 warning, 0 errors
 compiling main.c...
-".\Objects\Project.axf" - 1 Error(s), 0 Warning(s).
-Target not created.
+.\Functions\actions.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+Program\main.c(59): warning:  #111-D: statement is unreachable
+      Delay_s(2);
+Program\main.c(73): warning:  #223-D: function "Button" declared implicitly
+      while(Button()==0);//等待按键按下(发车)
+Program\main.c(74): warning:  #223-D: function "LED" declared implicitly
+      LED(1,1);//点亮LED
+Program\main.c(75): warning:  #223-D: function "Button" declared implicitly
+      while(Button()==1);//等待按键松开
+Program\main.c(110): warning:  #223-D: function "Button" declared implicitly
+      while(Button()==0);//等待按键按下(发车)
+Program\main.c(112): warning:  #223-D: function "Button" declared implicitly
+      while(Button()==1);//等待按键松开
+Program\main.c(58): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "counter"  (declared at line 118)
+      goto END;
+      ^
+Program\main.c: 8 warnings, 0 errors
+linking...
+Program Size: Code=2512 RO-data=252 RW-data=0 ZI-data=1632  
+FromELF: creating hex file...
+".\Objects\Project.axf" - 0 Error(s), 9 Warning(s).
 Build Time Elapsed:  00:00:01
