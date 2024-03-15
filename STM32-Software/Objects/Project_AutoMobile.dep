@@ -782,7 +782,7 @@ I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
 I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
-F (.\Library\oled.c)(0x65F04C4D)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Boot -I .\Library -I .\Program -I .\Functions-IC:\Users\COTOMO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
+F (.\Library\oled.c)(0x65F45A0A)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Boot -I .\Library -I .\Program -I .\Functions-IC:\Users\COTOMO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
 I (.\Boot\stm32f10x.h)(0x4D783CB4)
 I (.\Boot\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -875,7 +875,7 @@ I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 F (.\Library\delay.h)(0x65F44D25)()
 F (.\Library\OLED_Font.h)(0x65F04867)()
-F (.\Program\main.c)(0x65F451EB)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Boot -I .\Library -I .\Program -I .\Functions-IC:\Users\COTOMO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\Program\main.c)(0x65F468A3)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Boot -I .\Library -I .\Program -I .\Functions-IC:\Users\COTOMO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Boot\stm32f10x.h)(0x4D783CB4)
 I (.\Boot\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -909,12 +909,12 @@ I (.\Functions\basicfunctions.h)(0x65F44E42)
 I (.\Library\OLED.h)(0x65F04867)
 I (.\Functions\Movement.h)(0x65F44C84)
 I (.\Library\Delay.h)(0x65F44D25)
-F (.\Functions\actions.c)(0x65F451EB)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Boot -I .\Library -I .\Program -I .\Functions-IC:\Users\COTOMO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\actions.o --omf_browse .\objects\actions.crf --depend .\objects\actions.d)
+F (.\Functions\actions.c)(0x65F4641F)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Boot -I .\Library -I .\Program -I .\Functions-IC:\Users\COTOMO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\actions.o --omf_browse .\objects\actions.crf --depend .\objects\actions.d)
 I (Functions\basicfunctions.h)(0x65F44E42)
 I (.\Library\Delay.h)(0x65F44D25)
 I (Functions\Movement.h)(0x65F44C84)
 F (.\Functions\actions.h)(0x65F44E3A)()
-F (.\Functions\basicfunctions.c)(0x65F44BF7)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Boot -I .\Library -I .\Program -I .\Functions-IC:\Users\COTOMO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\basicfunctions.o --omf_browse .\objects\basicfunctions.crf --depend .\objects\basicfunctions.d)
+F (.\Functions\basicfunctions.c)(0x65F46861)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Boot -I .\Library -I .\Program -I .\Functions-IC:\Users\COTOMO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="534" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\basicfunctions.o --omf_browse .\objects\basicfunctions.crf --depend .\objects\basicfunctions.d)
 I (.\Boot\stm32f10x.h)(0x4D783CB4)
 I (.\Boot\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)

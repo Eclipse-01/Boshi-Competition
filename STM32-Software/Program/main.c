@@ -16,23 +16,6 @@
 #define TurnLeft 101
 #define TurnRight 102
 
-/*
-enum DriveStage{ //定义了一个枚举类型，用来表示小车的状态
-    JustStart,//刚开始
-    WaitAtLine,//等待在线上
-    TurnRight1,//右转
-    TurnRight2,//右转
-    PrepareForStopby,//准备停车
-    Stopby,//停车
-    DriveOut,//驶出
-    TurnLeft1,//左转
-    TurnLeft2,//左转
-    SwitchLane,//切换车道
-    PrepareForStop,//准备停车
-    DriveBack,//开回起点
-};
-*/
-
 int main(void) //整个自动驾驶程序的入口点，负责调用各种各样的函数
 {
     initMCU(); //初始化MCU,包括端口，总线，定时器等
@@ -45,23 +28,34 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
       */                                      //int DriveStage = 0;//初始化小车状态
     int SensorStatus = 0;//初始化传感器状态
 
+motor(0,0);
+while(1){
+if (LineDetect()==Stop)
+    motor(0,0);
+else
+    motor(100,100);
+}+
+}
+
+int OS(){
+    int SensorStatus = 0;//初始化传感器状态
     while(1)//开到停车线前
     {
-        SensorStatus = LineDetcet();//检测传感器状态
-        if (LineDetcet() == Stop)//如果检测到停车线
+        if (LineDetect() == Stop)//如果检测到停车线
         {
             motor(0,0);//停车
             break;
         }
-        LineKeep(SensorStatus);//保持车道
+        LineKeep(LineDetect());//保持车道
     }
-    goto END;
+
     Delay_s(2);
+    return 0;
 
     while(1)//等待停车线
     {
-        SensorStatus = LineDetcet();//检测传感器状态
-        if (LineDetcet() == Stop)//如果检测到停车线
+        SensorStatus = LineDetect();//检测传感器状态
+        if (LineDetect() == Stop)//如果检测到停车线
         {
             break;
         }
@@ -80,14 +74,14 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
     
     while(1)//进入变道区域，并忽略停车线
     {
-        SensorStatus = LineDetcet();//检测传感器状态
-        if (LineDetcet() == Stop)//如果检测到停车线
+        SensorStatus = LineDetect();//检测传感器状态
+        if (SensorStatus == Stop)//如果检测到停车线
         {
             SensorStatus = NoWire; 
         }
         LineKeep(SensorStatus);//保持车道
 
-        if (LineDetcet() == TurnLeft)//如果检测此次为左转
+        if (LineDetect() == TurnLeft)//如果检测此次为左转
         {
             break;
         }
@@ -95,7 +89,7 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
 
     for (int i = 0; i < 9999; i++)//通过修改 i 的值来控制小车的行驶距离
     {
-        SensorStatus = LineDetcet();//检测传感器状态
+        SensorStatus = LineDetect();//检测传感器状态
         LineKeep(SensorStatus);//保持车道
     }
 
@@ -103,7 +97,7 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
 
     for (int i = 0; i < 9999; i++)//通过修改 i 的值来控制小车的行驶距离
     {
-        SensorStatus = LineDetcet();//检测传感器状态
+        SensorStatus = LineDetect();//检测传感器状态
         LineKeep(SensorStatus);//保持车道
     }
 
@@ -118,8 +112,8 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
     int counter = 0;
     while(1)
     {
-        SensorStatus = LineDetcet();//检测传感器状态
-        if (LineDetcet() == TurnRight)//如果检测到停车线
+        SensorStatus = LineDetect();//检测传感器状态
+        if (LineDetect() == TurnRight)//如果检测到停车线
         {
             counter++;
             if (counter == 2)
@@ -143,14 +137,4 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
 END:
     LED(1,1);//点亮LED
     motor(0,0);//停车
-
-
-
-
-
-
-
-
-
-    
 }

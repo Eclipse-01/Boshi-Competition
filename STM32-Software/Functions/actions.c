@@ -14,20 +14,27 @@
 
 #define k 1000//地面摩擦系数参数
 
-int LineDetcet()//车道检测
+int LineDetceor()//车道检测
 {
     if (!(Sensor(1) || Sensor(2) || Sensor(3) || Sensor(4)))//所有传感器均没有检测到压线
     return NoWire;
-    if (Sensor(2))//左侧检测到压线
-    return Left1;
-    if (Sensor(3))//右侧检测到压线
-    return Right1;
-    if ((Sensor(1)&&Sensor(4))) //两边均检测到压线,但同时两边外侧的传感器没有反应
-    return Stop;
     if (Sensor(1) == 1 && Sensor(2) == 1 && Sensor(4))//左侧均检测到压线，右侧未检测到压线
     return TurnLeft;
     if (Sensor(3) == 1 && Sensor(4) == 1 && Sensor(1))//右侧均检测到压线，左侧未检测到压线
     return TurnRight;
+    if ((Sensor(1)||(Sensor(2)&&Sensor(3))||Sensor(4))) //两边均检测到压线
+    return Stop;
+    if (Sensor(2))//左侧检测到压线
+    return Left1;
+    if (Sensor(3))//右侧检测到压线
+    return Right1;
+    return 0;
+}
+int LineDetect(){
+    if (!(Sensor(1) || Sensor(2) || Sensor(3) || Sensor(4)))//所有传感器均没有检测到压线
+    return NoWire;
+    if((Sensor(1) || Sensor(2) || Sensor(3) || Sensor(4)))//有一个传感器检测到压线
+    return Stop;
 }
 
 int LineKeep(int LineStatus)//车道保持
