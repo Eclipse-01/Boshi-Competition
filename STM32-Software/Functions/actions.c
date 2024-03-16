@@ -2,7 +2,6 @@
 #include "Delay.h"
 #include "Movement.h"
 
-
 #define NoWire 0
 #define Left0 1
 #define Left1 2
@@ -12,85 +11,93 @@
 #define TurnLeft 101
 #define TurnRight 102
 
-#define k 1000//地面摩擦系数参数
+#define k 1 // 地面摩擦系数参数
 
-int LineDetceor()//车道检测
+int LineDetect() // 车道检测
 {
-    if (!(Sensor(1) || Sensor(2) || Sensor(3) || Sensor(4)))//所有传感器均没有检测到压线
-    return NoWire;
-    if (Sensor(1) == 1 && Sensor(2) == 1 && Sensor(4))//左侧均检测到压线，右侧未检测到压线
-    return TurnLeft;
-    if (Sensor(3) == 1 && Sensor(4) == 1 && Sensor(1))//右侧均检测到压线，左侧未检测到压线
-    return TurnRight;
-    if ((Sensor(1)||(Sensor(2)&&Sensor(3))||Sensor(4))) //两边均检测到压线
-    return Stop;
-    if (Sensor(2))//左侧检测到压线
-    return Left1;
-    if (Sensor(3))//右侧检测到压线
-    return Right1;
-    return 0;
-}
-int LineDetect(){
-    if (!(Sensor(1) || Sensor(2) || Sensor(3) || Sensor(4)))//所有传感器均没有检测到压线
-    return NoWire;
-    if((Sensor(1) || Sensor(2) || Sensor(3) || Sensor(4)))//有一个传感器检测到压线
-    return Stop;
+    int leftOuter = Sensor(1);
+    int leftInner = Sensor(2);
+    int rightInner = Sensor(3);
+    int rightOuter = Sensor(4);
+
+    if (!(leftOuter || leftInner || rightInner || rightOuter)) {//无线检测
+        return NoWire;
+    }
+    if (leftOuter) {
+        return TurnLeft;
+    }
+    if (rightOuter) {
+        return TurnRight;
+    }
+    if (leftInner && rightInner) {
+        return Stop;
+    }
+    if (leftInner) {
+        return Left1;
+    }
+    if (rightInner) {
+        return Right1;
+    }
 }
 
-int LineKeep(int LineStatus)//车道保持
+int LineKeep(int LineStatus) // 车道保持
 {
     switch (LineStatus) {
         case NoWire:
-            motor(100, 100); // 左右电机正转
+            motor(70, 70); // 左右电机正转
             break;
         case Left1:
-            motor(100, 80); // 左侧电机正转，右侧电机慢正转
+            motor(60, 80); // 减少左侧电机速度，增加右侧电机速度
             break;
         case Right1:
-            motor(80, 100); // 左侧电机慢正转，右侧电机正转
+            motor(80, 60); // 增加左侧电机速度，减少右侧电机速度
             break;
         case Stop:
             motor(0, 0); // 所有电机全部停止
-            return Stop;
-        case TurnLeft:
-            motor(-100, 100); // 左侧电机反转，右侧电机正转
+            break;
+         case TurnLeft:
+            motor(-80, 80); // 左侧电机反转，右侧电机正转
             while(Sensor(4) == 0)//在右侧检测到压线前，一直转
             {
             }
-            motor(70,30);
+            motor(70,60);
             while(Sensor(2) == 0)//在左侧检测到压线前，一直转
             {
             }
-            return TurnLeft;
+            motor(0,0);
+            break;
         case TurnRight:
-            motor(100, -100); // 左侧电机正转，右侧电机反转
+            motor(80, -80); // 左侧电机正转，右侧电机反转
             while(Sensor(1) == 0)//在左侧检测到压线前，一直转
             {
             }
-            motor(30,70);
+            motor(60,70);
             while(Sensor(3) == 0)//在右侧检测到压线前，一直转
             {
             }
-            return TurnRight;
+            motor(0,0);
+            break;
     }
     return 0;
 }
 
+
 int AutoPark()//倒车入库
 {
-    motor(-20,-20);
-    Delay_ms(1000*k);
-    motor(-30,30);//转到正确方向
-    Delay_ms(1000*k);
-    while(Sensor(1) && Sensor(4))
+    motor(-80,-80);
+    while(((Sensor(1) && Sensor(4))) == 0)
     {
-        if (Sensor(2) == 0 && Sensor(3) == 0)
+        if (Sensor(1)==1)
         {
-            motor(0,0);
-            break;
+            motor(0,-60);
+        }
+        if (Sensor(4)==1)
+        {
+            motor(-60,0);
         }
     }
-    motor(-20,-20);
+
+    motor(-60,-60);
     while(Sensor(2) == 1 && Sensor(3) == 1)
     {
     } 

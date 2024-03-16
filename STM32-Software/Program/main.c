@@ -7,7 +7,7 @@
 #include <Movement.h>
 #include <Delay.h>
 
-#define NoWire 0
+#define NoWire 0    
 #define Left0 1
 #define Left1 2
 #define Right1 4
@@ -19,6 +19,10 @@
 int main(void) //整个自动驾驶程序的入口点，负责调用各种各样的函数
 {
     initMCU(); //初始化MCU,包括端口，总线，定时器等
+    while(1)
+    {
+        LineKeep(LineDetect());
+    }
     /*
     while(Button()==0);//等待按键按下
     LED(1,1);//点亮LED
@@ -26,18 +30,6 @@ int main(void) //整个自动驾驶程序的入口点，负责调用各种各样
     Delay_ms(500);//延时
     LED(1,0);//熄灭LED
       */                                      //int DriveStage = 0;//初始化小车状态
-    int SensorStatus = 0;//初始化传感器状态
-
-motor(0,0);
-while(1){
-if (LineDetect()==Stop)
-    motor(0,0);
-else
-    motor(100,100);
-}+
-}
-
-int OS(){
     int SensorStatus = 0;//初始化传感器状态
     while(1)//开到停车线前
     {

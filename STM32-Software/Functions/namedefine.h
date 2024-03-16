@@ -10,14 +10,15 @@
 #define MotorRightForward GPIOA_Pin_4//右电机正转
 #define MotorRightBackward GPIOA_Pin_8//右电机反转
 
-
-//传感器类
+/*
+//传感器类(废弃)
 #define LightSensor1 GPIOA_Pin_5//循迹传感器1
 #define LightSensor2 GPIOA_Pin_6//循迹传感器2
 #define LightSensor3 GPIOA_Pin_7//循迹传感器3
 #define LightSensor4 GPIOB_Pin_0//循迹传感器4
 #define LightSensor5 GPIOB_Pin_1//循迹传感器5（在车头正中间，用来检测终点）
 #define Button1 GPIOB_Pin_1//按钮1
+*/
 
 //其他的输出
 #define LED1 GPIOB_Pin_5//LED1
